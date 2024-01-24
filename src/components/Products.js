@@ -36,16 +36,17 @@ const Products = () => {
   const navigate = useNavigate()
   return (
     <>
-      <div className=" py-5 mt-5 bg-primary">
+    <div className="bg-primary rounded shadw-lg">
+    <div className=" py-5 mt-5 bg-dark">
         <Navbar />
         {logged ?
         <>
             <div className="d-flex justify-content-between align-items-center">
-          <h1 className=" text-muted w-50 mx-3 " style={{ marginTop: "-20px" }}>
+            <h1 className=" text-white w-50 mx-4 " style={{ marginTop: "-20px" }}>
             Our Products
           </h1>
           <input
-            className="form-control w-50 mx-5"
+            className=" w-50 mx-5 bg-dark border-solid-red rounded p-2"
             type="text"
             placeholder="Search About Product"
             onChange={(e) => setSearchTitle(e.target.value)}
@@ -74,8 +75,8 @@ const Products = () => {
               ).map((product) => (
                 <div className="" key={product.id}>
                   <Card
-                    style={{ width: "18rem" }}
-                    className="shadow-lg p-3 mb-5 bg-white rounded carrrrd"
+                  style={{ width: "18rem" , backgroundColor:"	#404040"}}
+                  className="shadow-lg p-3 mb-5  rounded carrrrd"
                   >
                     <Card.Img
                       variant="top"
@@ -83,26 +84,26 @@ const Products = () => {
                       style={{ height: "250px", padding: "3px"  }}
                     />
                     <Card.Body>
-                      <Card.Title>
+                      <Card.Title style={{color:"#f5fffa"}}>
                         {product.title && product.title.length > 10
                           ? `${product.title.substring(0, 20)}..`
                           : product.title}
                       </Card.Title>
-                      <Card.Text style={{ fontSize: "small" }}>
+                      <Card.Text style={{ fontSize: "small" , color:"#f5fffa"}}>
                         {product.description && product.description.length > 30
                           ? `${product.description.substring(0, 30)}...etc`
                           : product.description}
                       </Card.Text>
-                      <Card.Text style={{ fontSize: "small" }}>
+                      <Card.Text style={{ fontSize: "small" , color:"#f5fffa"}}>
                         {product.city && product.city.length > 30
                           ? `${product.city.substring(0, 30)}...etc`
                           : product.city}
                       </Card.Text>
                       <div className="d-flex justify-content-between">
-                        <Card.Text className="h6">
+                        <Card.Text className="h6" style={{ color:"#f5fffa"}}>
                           Price : {product.price}$
                         </Card.Text>
-                        <Card.Text className="h6">
+                        <Card.Text className="h6" style={{  color:"#f5fffa"}}>
                           Rating : {product.rating.rate}{" "}
                           <AiFillStar className="text-warning mb-1 " />
                         </Card.Text>
@@ -141,8 +142,8 @@ const Products = () => {
             {Array.from({ length: NbPage }, (_, i) => i + 1).map((page) => {
               return (
                 <Button
-                  className="d-flex justify-contnet-between page-item page-link"
-                  onClick={() => setCurrent(page)}
+                className="d-flex justify-contnet-between page-item page-link bg-dark decoration-none color-white"
+                onClick={() => setCurrent(page)}
                 >
                   {page}
                 </Button>
@@ -158,6 +159,8 @@ const Products = () => {
 
     
       </div>
+    </div>
+     
 
       <Footer />
     </>

@@ -48,7 +48,104 @@ const Category = () => {
   
   return (
     <>
-      <div className=" py-5 mt-5 bg-primary">
+    <div className="bg-primary rounded shadw-lg">
+       <div className=" py-5 mt-5 bg-dark">
+        <Navbar />
+        {logged ? <>
+          <div className="d-flex justify-content-between align-items-center">
+          <h1 className=" text-white w-50 mx-4 " style={{ marginTop: "-20px" }}>
+            Our Products
+          </h1>
+          <input
+            className=" w-50 mx-5 bg-dark border-solid-red rounded p-2"
+            type="text"
+            placeholder="Search About Product"
+            onChange={(e) => setSearchTitle(e.target.value)}
+          />
+          <style>
+            {`
+      @media (max-width: 350px) {
+        .d-flex {
+          flex-direction: column;
+        }
+        .form-control, h1 {
+          width: 100%;
+          margin: 10px 0;
+        }
+        
+      }
+    `}
+          </style>
+        </div>
+        <div className="container-fluid mt-4">
+          <div className="" style={{display:"grid" , gridTemplateColumns:"repeat(auto-fill , minmax(260px , 1fr)) " ,gap:"30PX" }}>
+            {filteredProducts.map((pro) => (
+              <div className="" key={pro.id}>
+                <div
+                  class="card shadow-lg p-3 mb-5  rounded"
+                  style={{ width: "18rem" , backgroundColor:"	#404040"}}
+                >
+                  <img
+                    class="card-img-top"
+                    src={pro.images[0]}
+                    style={{
+                      height: "300px",
+                      padding: "3px",
+                      borderRadius: "10px",
+                    }}
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title " style={{color:"#f5fffa"}}>{pro.title.slice(0, 20)}</h5>
+                    <p class="card-text"style={{color:"#f5fffa"}}>
+                      {pro.description.slice(0, 35)}...etc
+                    </p>
+                    <div className="d-flex gap-2">
+                    <Link
+                      variant="primary"
+                      className="w-100 mt-1 btn btn-primary "
+                      to={`/category/${pro.id}`}
+                    >
+                       Details
+                    </Link>
+                    <Button
+                      onClick={() => dispatch(addToCartCategory(pro))}
+                      variant="info"
+                      className="w-100 mt-1"
+                    >
+                      Add Cart
+                    </Button>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center my-5">
+            {Array.from({ length: NbPage }, (_, i) => i + 1).map((page) => {
+              return (
+                <Button
+                  className="d-flex justify-contnet-between page-item page-link bg-dark decoration-none color-white"
+                  onClick={() => setCurrent(page)}
+                >
+                  {page}
+                </Button>
+              );
+            })}
+          </ul>
+        </nav>
+        </> : 
+        navigate("/login")
+        }
+  
+      </div>
+    </div>
+         
+
+      {/* <div className=" py-5 mt-5 bg-primary">
         <Navbar />
         {logged ? <>
           <div className="d-flex justify-content-between align-items-center">
@@ -140,7 +237,7 @@ const Category = () => {
         navigate("/login")
         }
   
-      </div>
+      </div> */}
 
       <Footer />
     </>

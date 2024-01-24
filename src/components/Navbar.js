@@ -9,7 +9,7 @@ function BasicExample() {
   const cart = useSelector((state) => state.cart.cart);
   console.log("Products :-" , cart)
   return (
-    <Navbar fixed="top" expand="lg" className="bg-dark "  style={{ boxShadow: '0 4px 2px -2px rgba(0,0,0,0.1)' }} >
+    <Navbar fixed="top" expand="lg" className="bg-dark shadow-lg"  style={{ boxShadow: '0 4px 2px -2px rgba(0,0,0,0.1)' }} >
       <Container>
         <Link to="/" className="navbar-brand text-white">Navbar</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

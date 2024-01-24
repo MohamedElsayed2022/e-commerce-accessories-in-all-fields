@@ -24,10 +24,10 @@ const Cart = () => {
     <>
    
 
-      <div className="mt-5  " >
+      <div className="mt-5  bg-secondary" >
       <Navbar/>
       <div className="bg-primary p-3 ">
-      <h1 className="text-center bg-dark opacity-2 p-3 mt-3  text-white shadow-lg rounded"> Total Price :{total} $ </h1>
+      <h1 className="text-center bg-dark opacity-2 p-3 mt-3  text-white shadow-lg rounded"> Total Price :{" "}{total} $ </h1>
 
       </div>
       <Table striped bordered hover variant="dark" className="shadow-lg rounded" responsive>
@@ -79,6 +79,7 @@ const Cart = () => {
           // )}
           ))}
         </tbody>
+       
       </Table>
     </div>
       {/* <Footer /> */}
