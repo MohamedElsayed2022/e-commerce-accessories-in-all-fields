@@ -3,27 +3,34 @@ import { useDispatch, useSelector } from "react-redux";
 import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import { deleteCart, setCart } from "../RTK/Slices/cartSlice";
-import Navbar from '../components/Navbar'
+import Navbar from "../components/Navbar";
 import Footer from "./footer/Footer";
-
+import { Link } from "react-router-dom";
+import "./cart/Cart.css";
 const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
-  const category = useSelector((state)=>state.category.category)
-  const AllData = {...cart , ...category}
-  const total = cart.reduce((acc, product) =>
-   acc + (product.price * product.quantity)
-   , 0);
+  const category = useSelector((state) => state.category.category);
+  const AllData = { ...cart, ...category };
+  const total = cart.reduce(
+    (acc, product) => acc + product.price * product.quantity,
+    0
+  );
 
-   useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(cart));
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(cart));
   }, []);
   return (
     <>
-    <div className="mt-5  " >
+   
+
+      <div className="mt-5  " >
       <Navbar/>
-      <h1 className="text-center bg-primary p-3  text-white"> Total Price :{total} $ </h1>
-      <Table striped bordered hover className=" "style={{marginTop:""}} variant="dark" responsive>
+      <div className="bg-primary p-3 ">
+      <h1 className="text-center bg-dark opacity-2 p-3 mt-3  text-white shadow-lg rounded"> Total Price :{total} $ </h1>
+
+      </div>
+      <Table striped bordered hover variant="dark" className="shadow-lg rounded" responsive>
         <thead>
           <tr>
             <th>ID</th>
@@ -74,7 +81,7 @@ const Cart = () => {
         </tbody>
       </Table>
     </div>
-    <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

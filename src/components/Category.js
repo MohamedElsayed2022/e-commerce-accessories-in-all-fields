@@ -8,6 +8,7 @@ import {addToCartCategory, fetchAllCategories} from '../RTK/Slices/categorySlice
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+
 // import { FetchAllCategory } from "../RTK/Slices/categoryFetchApi";
 const Category = () => {
   const [data, setData] = useState([]);
