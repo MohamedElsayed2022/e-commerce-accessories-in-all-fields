@@ -16,7 +16,7 @@ const ShowDetails = () => {
       .then((product) => setProduct(product));
   }, []);
   return (
-    <div className="mt-5 p-1">
+    <div className="mt-5 p-1 bg-dark" style={{height:"93.5vh"}}>
       <Navbar />
       <div className="d-flex  text-center total">
         <div className=" total_1 mt-5" >
@@ -28,8 +28,10 @@ const ShowDetails = () => {
                   <div className="p2">  Description : {product.description} </div>
                   <div className="p3 ">Price : {product.price} $</div>
                   {/* <div className="p4 ">Rating :{product.rating} <FaStar className="mb-1 mx-1 text-warning " /> </div> */}
-                 
-                  <Link to="/produts" class="btn btn-primary mt-4 "><IoArrowBackOutline className="mx-2 mb-1"/>Back</Link>
+                 <div className="d-flex justify-content-end">
+                 <Link to="/products" class="btn btn-primary mt-4 "><IoArrowBackOutline className="mx-2 mb-1"/>Back</Link>
+
+                 </div>
 
 
 

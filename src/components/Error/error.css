@@ -13,13 +13,13 @@
   .notfound-page {
       width: 100%;
       float: left;
-      background-color: #1a69ae;
+      background-color: #444;
       padding: 60px 15px;
       text-align: center;
       height: 100vh;
   }
   .notfound-page h1 {
-      color: #eaff72;
+      color: red;
       font-size: 200px;
       letter-spacing: 10px;
   }

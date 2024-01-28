@@ -14,8 +14,9 @@ const Profile = () => {
     // console.log("User Data " , userData)
   return (
    <>
+
    <Navbar/>
-   <section class="vh-100" style={{backgroundColor: "#f4f5f7"}}>
+   <section class="vh-100 bg-dark" style={{backgroundColor: ""}}>
   <div class="container py-5 h-100 ">
     <div class="row d-flex justify-content-center align-items-center h-100 ">
       <div class="col col-lg-6 mb-4 mb-lg-0 shadow-lg p-3 mb-5 bg-white rounded">

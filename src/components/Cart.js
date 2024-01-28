@@ -23,8 +23,8 @@ const Cart = () => {
   return (
     <>
    
-
-      <div className="mt-5  bg-secondary" >
+<div className="bg-dark">
+<div className="mt-5  bg-secondary" >
       <Navbar/>
       <div className="bg-primary p-3 ">
       <h1 className="text-center bg-dark opacity-2 p-3 mt-3  text-white shadow-lg rounded"> Total Price :{" "}{total} $ </h1>
@@ -38,7 +38,7 @@ const Cart = () => {
             <th> Description</th>
             <th>Image</th>
             <th>Price</th>
-            <th>َQuantity</th>
+            <th>Quantity</th>
             <th>Rating</th>
 
 
@@ -82,6 +82,8 @@ const Cart = () => {
        
       </Table>
     </div>
+</div>
+      
       {/* <Footer /> */}
     </>
   );

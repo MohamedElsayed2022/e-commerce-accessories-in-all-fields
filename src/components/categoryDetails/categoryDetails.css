@@ -1,7 +1,7 @@
 .total_1{
     border: 1px solid transparent;
     border-radius: 15px;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    box-shadow: 5px 5px 5px #aaaaaa;
         padding: 1rem;
 }
 .total_1 img{
@@ -22,7 +22,7 @@
 }
 .all .p1 , .all .p2 ,.all .p3 ,.all .p4{
     border: 1px solid transparent;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    box-shadow: 5px 5px 5px #aaaaaa;
     border-radius: 1rem;
     padding: 1.5rem;
     /* display: block; */
